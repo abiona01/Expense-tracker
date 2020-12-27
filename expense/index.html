@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <!--Import Google Icon Font-->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>Expense Manager</title>
+    <style>
+        body {
+            font-weight: bold;
+            background-color: beige;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        section {
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+        }
+        .budget-feedback,
+        .expense-feedback {
+            display: none;
+        }
+        .showItem {
+            display: block;
+        }
+        .showRed {
+            color: blue;
+        }
+        .showGreen {
+            color: teal;
+        }
+        .showBlack {
+            color: black;
+        }
+        .delete-icon {
+            color: red;
+        }
+        .footer {
+        position: absolute;
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: 500px;
+        width: 100%;
+        background-color: rgb(199, 156, 126);
+        color: white;
+        text-align: center;
+      }
+      .foot {
+          font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container center">
+            <h3>EXPENSE TRACKER</h3>
+            <P>This web application will help keep track of your expenses.</P>
+        </div>
+    </section>
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l5"> 
+                <div class="budget-feedback alert alert-danger red-text">BUDGET FEEDBACK</div>
+                <div class="card">
+                    <form id="budget-form" class="budget-form">
+                        <p class="center">ENTER YOUR BUDGET</p>
+                        <div class="form-group">
+                            <input type="number" class="form-control budget-input" id="budget-input">
+                        </div>
+                        <div class="center" style="padding-bottom: 1vw;">
+                            <button type="submit" class="btn center budget-submit" id="budget-submit">CALCULATE</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="col s12 l7 flex-container">
+                <div class="container center">
+                    <p class="info-title">BUDGET</p>
+                    <span class="budget-icon"><i class="small material-icons">money</i></span>
+                    <h6 class="budget teal-text" id="budget" style="font-weight: bold;"><span># </span><span id="budget-amount">0</span></h6>
+                </div>
+                <div class="container center">
+                    <p class="info-title">EXPENSE</p>
+                    <span class="budget-icon"><i class="small material-icons">credit_card</i></span>
+                    <h6 class="expense red-text" id="expense" style="font-weight: bold;"><span># </span><span id="expense-amount">0</span></h6>
+                </div>
+                <div class="container center">
+                    <p class="info-title">BALANCE</p>
+                    <span class="budget-icon"><i class="small material-icons">account_balance</i></span>
+                    <h6 class="budget" id="balance" style="font-weight: bold;"><span># </span><span id="balance-amount">0</span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l5">
+                    <div class="expense-feedback alert alert-danger red-text">EXPENSE FEEDBACK</div>
+                    <div class="card">
+                        <form class="expense-form" id="expense-form">
+                            <p class="center">ENTER EXPENSE</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control expense-input" id="expense-input">
+                            </div>
+                            <p class="center">ENTER EXPENSE AMOUNT</p>
+                            <div class="form-group">
+                                <input type="number" class="form-control expense-input" id="amount-input">
+                            </div>
+                            <!-- submit button -->
+                            <div class="center" style="padding-bottom: 1vw;">
+                                <button type="submit" class="btn text-capitalize expense-submit" id="expense-submit">ADD EXPENSE</button>
+                            </div>   
+                        </form>
+                    </div>
+                </div>
+                <div class="col s12 l7">
+                    <div class="expense-list" id="expense-list">
+                        <div class="container">
+                        <div class="flex-container">
+                            <div class="container center space">
+                                <p class="list-item">EXPENSE TITLE</p>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="container center">
+                                <p class="list-item">EXPENSE AMOUNT</p>
+                            </div>
+                            <div class="container center">
+                                <h5 class="list-item"></h5>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <p class="foot">Designed by Adewemimo 2020.</p>
+       </div>
+    <!-- Compiled and minified JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
